@@ -1,0 +1,45 @@
+# Vivado generated directories (safe to delete/regenerate)
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.xpr.lock
+
+# Synthesis/implementation checkpoints
+*.dcp
+
+#DFX runtime output
+dfx_runtime.txt
+
+# Simulation/synthesis intermediate junk that can end up under .srcs
+*.srcs/*/new/
+
+# Vivado logs, journals, reports
+*.jou
+*.log
+*.str
+webtalk*.log
+webtalk*.jou
+*.wdb
+*.pb
+usage_statistics_webtalk.html
+usage_statistics_webtalk.xml
+
+# Xilinx hidden/support directories
+.Xil/
+.metadata/
+NA
+
+# Misc bitstream/debug byproducts (regenerated on build)
+*.bit
+*.bin
+*.mmi
+*.dat
+*.rbt
+*.ltx
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
