@@ -1,6 +1,6 @@
-module DAC7311_Controller 
-  #(parameter IN_DATA_WIDTH = 8)        // If more than 12, only top 12-bits of data_in will be accepted
-(
+module DAC7311_Controller #(
+    parameter IN_DATA_WIDTH = 8 // If more than 12, only top 12-bits of data_in will be accepted
+    ) (       
     input clk,
     input rst_n,
     input enable,
