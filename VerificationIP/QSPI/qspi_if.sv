@@ -99,6 +99,8 @@ interface qspi_if #(
         #(sclk_period);
         bus.csb = 1;
         bus.sclk = 1;
+        // final delay to ensure csb is reset to signal end of transaction
+        #(sclk_period);
     endtask
 
     task automatic monitor (

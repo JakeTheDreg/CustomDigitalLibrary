@@ -56,7 +56,22 @@ module top_tb();
     // test
     initial begin : test
         #200;
-        qspi_interface.send_data(.cmd(4'b0), .addr(8'h2F), .data(16'h13AD), .sclk_period(100));
+        // qspi_interface.send_data(.cmd(4'b0), .addr(8'h10), .data(16'h0000), .sclk_period(100));
+        // qspi_interface.send_data(.cmd(4'b0), .addr(8'h11), .data(16'h1111), .sclk_period(100));
+        // qspi_interface.send_data(.cmd(4'b0), .addr(8'h20), .data(16'h2200), .sclk_period(100));
+        // qspi_interface.send_data(.cmd(4'b0), .addr(8'h21), .data(16'h2211), .sclk_period(100));
+
+        // write to all coefficients
+        for(int i = 16; i < 36; i++) begin
+            qspi_interface.send_data(.cmd(4'b0), .addr(i), .data(i*2), .sclk_period(100));
+        end
+        
+        // send enable
+        qspi_interface.send_data(.cmd(4'b0), .addr(8'h00), .data(4'b0010), .sclk_period(100));
+
+        // send soft reset
+        qspi_interface.send_data(.cmd(4'b0), .addr(8'h00), .data(4'b0001), .sclk_period(100));
+
         #300;
         $finish;
     end

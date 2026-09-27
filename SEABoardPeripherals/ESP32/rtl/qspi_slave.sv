@@ -107,7 +107,7 @@ module qspi_slave #(
         if (!rst_n) begin
             data_out_ready <= 'b0;
         end else begin
-            data_out_ready <= cs_active && sclk_rise && (frame_counter == NUM_CMD_FRAMES+NUM_ADDR_FRAMES+NUM_DATA_FRAMES);
+            data_out_ready <= cs_active && sclk_rise && (frame_counter == NUM_CMD_FRAMES+NUM_ADDR_FRAMES+NUM_DATA_FRAMES-1);
         end
     end
 
