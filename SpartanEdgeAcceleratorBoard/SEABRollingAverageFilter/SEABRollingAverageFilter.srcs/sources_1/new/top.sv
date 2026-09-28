@@ -94,7 +94,7 @@ generic_pipe #(
 ////////////////////////////////////////////////////////////
 // Pipeline
 ////////////////////////////////////////////////////////////
-ADC1173_Controller_simple u_adc(
+ADC1173_controller u_adc(
     .clk(sys_clk),                      
     .rst_n(sys_rst_n),                    
     .enable(sys_enable),
@@ -106,7 +106,7 @@ ADC1173_Controller_simple u_adc(
     .adc_clk(adc_clk)              
 );
  
-gen_rolling_average_filter #(
+rolling_average_filter #(
     .NUM_TAPS(64),
     .DATA_WIDTH(ADC_DATA_WIDTH)
 ) u_filter(
@@ -121,7 +121,7 @@ gen_rolling_average_filter #(
     .data_out_valid(filter_valid)
 );
  
-DAC7311_Controller #(
+DAC7311_controller #(
     .IN_DATA_WIDTH(ADC_DATA_WIDTH)
 ) u_dac(
     .clk(sys_clk),

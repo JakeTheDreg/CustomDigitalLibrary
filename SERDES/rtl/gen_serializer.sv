@@ -1,3 +1,9 @@
+////////////////////////////////////////////////
+// Module name: gen_serializer
+// Author: Jake Bramhall
+// Purpose: Convert parallel data to serial data
+//          TODO: Needs to be tested
+////////////////////////////////////////////////
 module gen_serializer
   #(parameter IN_DATA_WIDTH = 8,
     parameter BIG_ENDIAN = 1            // default big endian

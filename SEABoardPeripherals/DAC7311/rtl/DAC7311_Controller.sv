@@ -1,4 +1,12 @@
-module DAC7311_Controller #(
+////////////////////////////////////////////////
+// Module name: DAC7311_controller
+// Author: Jake Bramhall
+// Purpose: Simple controller for the DAC7311 on board chip
+//          This chip uses SPI as its communication protocol
+//          Data is sent as 2 power-mode bits, 12 data bits, and 2 don't care bits
+//          sync_n must be held high for at least 20ns (1 50MHz period) in between transfers
+////////////////////////////////////////////////
+module DAC7311_controller #(
     parameter IN_DATA_WIDTH = 8 // If more than 12, only top 12-bits of data_in will be accepted
     ) (       
     input clk,

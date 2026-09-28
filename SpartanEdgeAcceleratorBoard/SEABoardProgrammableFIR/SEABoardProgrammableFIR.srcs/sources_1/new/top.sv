@@ -32,12 +32,12 @@ module top (
     logic lock_rst_n_sync;
     
     // control signals
-    (* keep = "yes" *) logic [3:0] slave_cmd_reg;
-    (* keep = "yes" *) logic [8:0] slave_addr_reg;
-    (* keep = "yes" *) logic [15:0] slave_data_reg;
-    (* keep = "yes" *) logic slave_data_ready_reg;
-    (* keep = "yes" *) logic enable_filter, soft_reset;
-    (* keep = "yes" *) logic [19:0] [15:0] coeffs_to_taps;
+    logic [3:0] slave_cmd_reg;
+    logic [8:0] slave_addr_reg;
+    logic [15:0] slave_data_reg;
+    logic slave_data_ready_reg;
+    logic enable_filter, soft_reset;
+    logic [19:0] [15:0] coeffs_to_taps;
 
     // adc signals
     logic [ADC_DATA_WIDTH-1:0] adc_2_filter_data;

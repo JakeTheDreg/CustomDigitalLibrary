@@ -1,4 +1,9 @@
-// Generic reset synchronizer for FPGA
+////////////////////////////////////////////////
+// Module name: rst_sync
+// Author: Jake Bramhall
+// Purpose: Generic reset synchronizer
+//          Converts Asynchronous resets into synchronous with clk domain
+////////////////////////////////////////////////
 module rst_sync #(
     parameter IS_NEGEDGE = 1,
     parameter NUM_STAGES = 2

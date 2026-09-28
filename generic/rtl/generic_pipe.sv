@@ -1,4 +1,11 @@
-module generic_pipe #(
+////////////////////////////////////////////////
+// Module name: gen_pipe
+// Author: Jake Bramhall
+// Purpose: Generic pipeline module.
+//          Configurable width and depth.
+//          Currently no internal peeking
+////////////////////////////////////////////////
+module gen_pipe #(
     parameter DATA_WIDTH = 1,
     parameter PIPE_DEPTH = 1
 ) (

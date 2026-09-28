@@ -1,5 +1,10 @@
-// based on the allaboutcircutis low pass filter article
-module gen_rolling_average_filter
+////////////////////////////////////////////////
+// Module name: rolling_average_filter
+// Author: Jake Bramhall
+// Purpose: Implements a rolling average filter.
+//          Requires NUM_TAPS to be power of two to simplify design.
+////////////////////////////////////////////////
+module rolling_average_filter
   #(parameter NUM_TAPS = 2,         // Must be power of 2
     parameter DATA_WIDTH = 8
 ) (
